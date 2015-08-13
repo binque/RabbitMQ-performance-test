@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="systemPropertyPlaceholderConfigurer" class="com.bin.test.rabbitmqtest.SystemPropertyPlaceholderConfigurer">
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="propertyName" value="rabbitmqtest.properties" />
+        <property name="locations">
+            <list>
+                <value>classpath:/rabbitmqtest.properties</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="sendtest" class="com.bin.test.rabbitmqtest.SendTest">
+    	<property name="queueCount" value="${queueCount}"></property>
+    	<property name="sendThreadCount" value="${sendThreadCount}"></property>
+    	<property name="messageTotalCount" value="${messageTotalCount}"></property>
+    	<property name="connectorTotalCount" value="${connectorTotalCount}"></property>
+    </bean>
+
+    <bean id="cusumerTest" class="com.bin.test.rabbitmqtest.ConsumerTest">
+    	<property name="queueCount" value="${queueCount}"></property>
+    	<property name="consumerThreadCount" value="${consumerThreadCount}"></property>
+    	<property name="messageTotalCount" value="${messageTotalCount}"></property>
+    	<property name="connectorTotalCount" value="${consumerConnectorTotalCount}"></property>
+    	<property name="prefetchCount" value="${prefetchCount}"></property>
+    </bean>
+    
+</beans>
