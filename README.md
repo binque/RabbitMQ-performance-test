@@ -63,3 +63,4 @@ cat /proc/cpuinfo | grep "cpu cores" | uniq | awk -F: '{print $2}'
 
 ---
 
+参考：https://github.com/binque/RabbitMQ-performance-test/blob/master/RabbitMQ%E5%88%9D%E6%AD%A5%E4%BC%98%E5%8C%96%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A.docx
