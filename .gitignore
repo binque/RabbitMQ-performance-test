@@ -3,7 +3,6 @@
 *.project
 *.classpath
 *.settings/
-bin/
 target/
 # Package Files #
 *.jar
@@ -11,22 +10,11 @@ target/
 *.ear
 .idea/
 *.iml
-version.properties
-test-output/
 *.bak
 *.log*
 *.lnk
 *rebel.xml
 bin-debug/
 *.wav
-javascripts_compress/
 context.xml
-nb-configuration.xml
 /.DS_Store
-*.DS_Store
-.metadata
-portal/platform-webapp/src/main/webapp/WEB-INF/classes
-portal/platform-webapp/src/main/webapp/WEB-INF/modules
-portal/platform-webapp/src/main/webapp/WEB-INF/lib
-portal/platform-webapp/src/main/webapp/resources/javascripts/everbridge/eb_combine.js
-portal/platform-webapp/src/main/webapp/resources/combine/*
